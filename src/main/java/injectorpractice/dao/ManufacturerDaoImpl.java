@@ -15,7 +15,9 @@ public class ManufacturerDaoImpl implements ManufacturerDao {
     }
 
     public Optional<Manufacturer> get(Long id) {
-        return Storage.manufacturers.stream().filter(m -> m.getId().equals(id)).findFirst();
+        return Storage.manufacturers.stream()
+                .filter(m -> m.getId().equals(id))
+                .findFirst();
     }
 
     public List<Manufacturer> getAll() {
@@ -25,7 +27,8 @@ public class ManufacturerDaoImpl implements ManufacturerDao {
     public Manufacturer update(Manufacturer manufacturer) {
         IntStream.range(0, Storage.manufacturers.size())
                 .filter(i -> (Storage.manufacturers.get(i).getId().equals(manufacturer.getId())))
-                .findFirst().ifPresent(i -> Storage.manufacturers.set(i, manufacturer));
+                .findFirst()
+                .ifPresent(i -> Storage.manufacturers.set(i, manufacturer));
         return manufacturer;
     }
 

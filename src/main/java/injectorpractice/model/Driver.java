@@ -5,13 +5,12 @@ public class Driver {
     private String name;
     private String licenceNumber;
 
-    public Driver(Long id, String name, String licenceNumber) {
-        this.id = id;
+    public Driver(String name, String licenceNumber) {
         this.name = name;
         this.licenceNumber = licenceNumber;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 

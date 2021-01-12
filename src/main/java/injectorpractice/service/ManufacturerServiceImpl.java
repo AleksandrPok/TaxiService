@@ -9,12 +9,11 @@ import java.util.List;
 @Service
 public class ManufacturerServiceImpl implements ManufacturerService {
     @Inject
-    ManufacturerDao manufacturerDao;
+    private ManufacturerDao manufacturerDao;
 
     @Override
     public Manufacturer create(Manufacturer manufacturer) {
-        manufacturerDao.create(manufacturer);
-        return manufacturer;
+        return manufacturerDao.create(manufacturer);
     }
 
     @Override
@@ -29,8 +28,7 @@ public class ManufacturerServiceImpl implements ManufacturerService {
 
     @Override
     public Manufacturer update(Manufacturer manufacturer) {
-        manufacturerDao.update(manufacturer);
-        return manufacturer;
+        return manufacturerDao.update(manufacturer);
     }
 
     @Override
