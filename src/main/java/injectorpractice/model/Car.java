@@ -1,25 +1,26 @@
 package injectorpractice.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Car {
-    private long id;
+    private Long id;
     private String model;
     private Manufacturer manufacturer;
     private List<Driver> drivers;
 
-    public Car(long id, String model, Manufacturer manufacturer, List<Driver> drivers) {
+    public Car(Long id, String model, Manufacturer manufacturer) {
         this.id = id;
         this.model = model;
         this.manufacturer = manufacturer;
-        this.drivers = drivers;
+        this.drivers = new ArrayList<>();
     }
 
     public long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
