@@ -3,7 +3,6 @@ package injectorpractice.dao;
 import injectorpractice.db.Storage;
 import injectorpractice.lib.Dao;
 import injectorpractice.model.Driver;
-
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.IntStream;

@@ -1,7 +1,6 @@
 package injectorpractice.service;
 
 import injectorpractice.model.Driver;
-
 import java.util.List;
 
 public interface DriverService {

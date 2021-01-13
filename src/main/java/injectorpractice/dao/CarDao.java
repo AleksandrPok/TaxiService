@@ -1,7 +1,6 @@
 package injectorpractice.dao;
 
 import injectorpractice.model.Car;
-
 import java.util.List;
 import java.util.Optional;
 

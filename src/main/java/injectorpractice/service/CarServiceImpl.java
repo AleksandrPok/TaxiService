@@ -6,7 +6,6 @@ import injectorpractice.lib.Inject;
 import injectorpractice.lib.Service;
 import injectorpractice.model.Car;
 import injectorpractice.model.Driver;
-
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -15,7 +14,7 @@ public class CarServiceImpl implements CarService {
     @Inject
     private CarDao carDao;
     @Inject
-    DriverDao driverDao;
+    private DriverDao driverDao;
 
     @Override
     public Car create(Car car) {

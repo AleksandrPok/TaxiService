@@ -2,7 +2,6 @@ package injectorpractice.service;
 
 import injectorpractice.model.Car;
 import injectorpractice.model.Driver;
-
 import java.util.List;
 
 public interface CarService {

@@ -4,7 +4,6 @@ import injectorpractice.dao.DriverDao;
 import injectorpractice.lib.Inject;
 import injectorpractice.lib.Service;
 import injectorpractice.model.Driver;
-
 import java.util.List;
 
 @Service
