@@ -1,13 +1,11 @@
 package injectorpractice.dao;
 
 import injectorpractice.db.Storage;
-import injectorpractice.lib.Dao;
 import injectorpractice.model.Manufacturer;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.IntStream;
 
-@Dao
 public class ManufacturerDaoImpl implements ManufacturerDao {
     public Manufacturer create(Manufacturer manufacturer) {
         Storage.addManufacturer(manufacturer);
