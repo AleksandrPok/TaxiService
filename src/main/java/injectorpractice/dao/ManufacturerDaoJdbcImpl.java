@@ -17,8 +17,8 @@ import java.util.Optional;
 public class ManufacturerDaoJdbcImpl implements ManufacturerDao {
     @Override
     public Manufacturer create(Manufacturer manufacturer) {
-        String create = "INSERT INTO manufacturer (manufacturer_name, manufacturer_country)"
-                + " VALUES(?, ?);";
+        String create = "INSERT INTO manufacturer (name, country) VALUES(?, ?);";
+
         try (Connection connection = ConnectionUtil.getConnection();
                 PreparedStatement statement = connection.prepareStatement(create,
                         Statement.RETURN_GENERATED_KEYS)) {
@@ -38,8 +38,7 @@ public class ManufacturerDaoJdbcImpl implements ManufacturerDao {
 
     @Override
     public Optional<Manufacturer> get(Long id) {
-        String select = "SELECT * FROM manufacturer WHERE manufacturer_id = ? AND "
-                + "manufacturer_deleted = false;";
+        String select = "SELECT * FROM manufacturer WHERE id = ? AND deleted = false;";
         Manufacturer manufacturer = null;
         try (Connection connection = ConnectionUtil.getConnection();
                 PreparedStatement statement = connection.prepareStatement(select)) {
@@ -56,7 +55,7 @@ public class ManufacturerDaoJdbcImpl implements ManufacturerDao {
 
     @Override
     public List<Manufacturer> getAll() {
-        String selectAll = "SELECT * FROM manufacturer WHERE manufacturer_deleted = false;";
+        String selectAll = "SELECT * FROM manufacturer WHERE deleted = false;";
         List<Manufacturer> manufacturers = new ArrayList<>();
         try (Connection connection = ConnectionUtil.getConnection();
                 PreparedStatement statement = connection.prepareStatement(selectAll)) {
@@ -65,15 +64,15 @@ public class ManufacturerDaoJdbcImpl implements ManufacturerDao {
                 manufacturers.add(getManufacturer(resultSet));
             }
         } catch (SQLException e) {
-            throw new DataProcessingException("Can't get manufactorers from database", e);
+            throw new DataProcessingException("Can't get manufacturers from database", e);
         }
         return manufacturers;
     }
 
     @Override
     public Manufacturer update(Manufacturer manufacturer) {
-        String update = "UPDATE manufacturer SET manufacturer_name = ?, manufacturer_country = ? "
-                + "WHERE manufacturer_id = ? AND manufacturer_deleted = false;";
+        String update = "UPDATE manufacturer SET name = ?, country = ? "
+                + "WHERE id = ? AND deleted = false;";
         try (Connection connection = ConnectionUtil.getConnection();
                 PreparedStatement statement = connection.prepareStatement(update)) {
             statement.setString(1, manufacturer.getName());
@@ -88,8 +87,7 @@ public class ManufacturerDaoJdbcImpl implements ManufacturerDao {
 
     @Override
     public boolean delete(Long id) {
-        String delete = "UPDATE manufacturer SET manufacturer_deleted = true WHERE "
-                + "manufacturer_id = ?;";
+        String delete = "UPDATE manufacturer SET deleted = true WHERE id = ?;";
         int result;
         try (Connection connection = ConnectionUtil.getConnection();
                 PreparedStatement statement = connection.prepareStatement(delete)) {
@@ -103,9 +101,9 @@ public class ManufacturerDaoJdbcImpl implements ManufacturerDao {
 
     private Manufacturer getManufacturer(ResultSet resultSet) {
         try {
-            Long manufacturerId = resultSet.getObject("manufacturer_id", Long.class);
-            String manufacturerName = resultSet.getString("manufacturer_name");
-            String manufacturerCountry = resultSet.getString("manufacturer_country");
+            Long manufacturerId = resultSet.getObject("id", Long.class);
+            String manufacturerName = resultSet.getString("name");
+            String manufacturerCountry = resultSet.getString("country");
             Manufacturer manufacturer = new Manufacturer(manufacturerName, manufacturerCountry);
             manufacturer.setId(manufacturerId);
             return manufacturer;
