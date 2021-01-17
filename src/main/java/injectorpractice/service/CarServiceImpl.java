@@ -7,7 +7,6 @@ import injectorpractice.lib.Service;
 import injectorpractice.model.Car;
 import injectorpractice.model.Driver;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 public class CarServiceImpl implements CarService {
