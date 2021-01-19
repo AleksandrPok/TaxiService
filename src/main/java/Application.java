@@ -33,7 +33,7 @@ public class Application {
         driverService.create(secondDriver);
         driverService.create(thirdDriver);
         System.out.println("DriversList : " + driverService.getAll());
-        System.out.println("Second driver : " + driverService.get(2L));
+        System.out.println("Second driver : " + driverService.get(3L));
         Driver updateDriver = new Driver("Morena", "IMD1072555");
         updateDriver.setId(3L);
         driverService.update(updateDriver);
@@ -42,12 +42,11 @@ public class Application {
         CarService carService = (CarService) injector.getInstance(CarService.class);
         Car firstCar = new Car("406", firstManufacturer);
         Car secondCar = new Car("Corolla", secondManufacturer);
-        Car thirdCar = new Car("E38", firstManufacturer);
+        Car thirdCar = new Car("E38", thirdManufacturer);
         carService.create(firstCar);
         carService.create(secondCar);
         carService.create(thirdCar);
         System.out.println("CarsList : " + carService.getAll());
-        System.out.println("First car : " + carService.get(1L));
         Car updateCar = new Car("Supra", manufacturerService.get(2L));
         updateCar.setId(1L);
         carService.update(updateCar);
