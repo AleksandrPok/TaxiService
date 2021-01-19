@@ -49,6 +49,7 @@ public class Application {
         System.out.println("CarsList : " + carService.getAll());
         System.out.println("First car : " + carService.get(1L));
         Car updateCar = new Car("Supra", manufacturerService.get(2L));
+        updateCar.setId(1L);
         carService.update(updateCar);
         System.out.println(carService.getAll());
         carService.addDriverToCar(driverService.get(1L), carService.get(1L));
