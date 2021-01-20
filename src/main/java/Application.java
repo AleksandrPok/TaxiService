@@ -1,13 +1,13 @@
-import injectorpractice.lib.Injector;
-import injectorpractice.model.Car;
-import injectorpractice.model.Driver;
-import injectorpractice.model.Manufacturer;
-import injectorpractice.service.CarService;
-import injectorpractice.service.DriverService;
-import injectorpractice.service.ManufacturerService;
+import taxi.lib.Injector;
+import taxi.model.Car;
+import taxi.model.Driver;
+import taxi.model.Manufacturer;
+import taxi.service.CarService;
+import taxi.service.DriverService;
+import taxi.service.ManufacturerService;
 
 public class Application {
-    private static final Injector injector = Injector.getInstance("injectorpractice");
+    private static final Injector injector = Injector.getInstance("taxi");
 
     public static void main(String[] args) {
         ManufacturerService manufacturerService = (ManufacturerService)
