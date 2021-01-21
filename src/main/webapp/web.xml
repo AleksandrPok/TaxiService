@@ -3,13 +3,94 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
          http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
+    
     <servlet>
         <servlet-name>index</servlet-name>
         <servlet-class>taxi.controller.IndexController</servlet-class>
     </servlet>
-
     <servlet-mapping>
         <servlet-name>index</servlet-name>
-        <url-pattern>/index</url-pattern>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>createDriver</servlet-name>
+        <servlet-class>taxi.controller.driver.CreateDriverController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>createDriver</servlet-name>
+        <url-pattern>/drivers/add</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>getAllDrivers</servlet-name>
+        <servlet-class>taxi.controller.driver.GetAllDriversController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>getAllDrivers</servlet-name>
+        <url-pattern>/drivers</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>deleteDriver</servlet-name>
+        <servlet-class>taxi.controller.driver.DeleteDriverController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>deleteDriver</servlet-name>
+        <url-pattern>/drivers/delete</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>createManufacturer</servlet-name>
+        <servlet-class>taxi.controller.manufacturer.CreateManufacturerController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>createManufacturer</servlet-name>
+        <url-pattern>/manufacturers/add</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>createCar</servlet-name>
+        <servlet-class>taxi.controller.car.CreateCarController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>createCar</servlet-name>
+        <url-pattern>/cars/add</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>addDriverToCar</servlet-name>
+        <servlet-class>taxi.controller.car.AddDriverToCarController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>addDriverToCar</servlet-name>
+        <url-pattern>/cars/drivers/add</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>deleteCar</servlet-name>
+        <servlet-class>taxi.controller.car.DeleteCarController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>deleteCar</servlet-name>
+        <url-pattern>/cars/delete</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>getAllCars</servlet-name>
+        <servlet-class>taxi.controller.car.GetAllCarsController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>getAllCars</servlet-name>
+        <url-pattern>/cars</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>getAllManufacturers</servlet-name>
+        <servlet-class>taxi.controller.manufacturer.GetAllManufacturersController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>getAllManufacturers</servlet-name>
+        <url-pattern>/manufacturers</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>deleteManufacturer</servlet-name>
+        <servlet-class>taxi.controller.manufacturer.DeleteManufacturerController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>deleteManufacturer</servlet-name>
+        <url-pattern>/manufacturers/delete</url-pattern>
     </servlet-mapping>
 </web-app>
