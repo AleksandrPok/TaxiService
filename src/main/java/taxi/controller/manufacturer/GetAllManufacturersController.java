@@ -1,14 +1,16 @@
 package taxi.controller.manufacturer;
 
 import java.io.IOException;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import taxi.lib.Injector;
+import taxi.model.Manufacturer;
 import taxi.service.ManufacturerService;
 
-public class DeleteManufacturer extends HttpServlet {
+public class GetAllManufacturersController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("taxi");
     private final ManufacturerService manufacturerService = (ManufacturerService)
             injector.getInstance(ManufacturerService.class);
@@ -16,7 +18,8 @@ public class DeleteManufacturer extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        manufacturerService.delete(Long.parseLong(req.getParameter("manufacturer_id")));
-        resp.sendRedirect(req.getContextPath() + "/");
+        List<Manufacturer> manufacturersList = manufacturerService.getAll();
+        req.setAttribute("manufacturers", manufacturersList);
+        req.getRequestDispatcher("/WEB-INF/views/manufacturer/all.jsp").forward(req, resp);
     }
 }

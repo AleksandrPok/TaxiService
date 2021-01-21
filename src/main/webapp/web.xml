@@ -15,82 +15,82 @@
     
     <servlet>
         <servlet-name>createDriver</servlet-name>
-        <servlet-class>taxi.controller.driver.CreateDriver</servlet-class>
+        <servlet-class>taxi.controller.driver.CreateDriverController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>createDriver</servlet-name>
-        <url-pattern>/driver/create</url-pattern>
+        <url-pattern>/drivers/add</url-pattern>
     </servlet-mapping>
     <servlet>
         <servlet-name>getAllDrivers</servlet-name>
-        <servlet-class>taxi.controller.driver.GetAllDrivers</servlet-class>
+        <servlet-class>taxi.controller.driver.GetAllDriversController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>getAllDrivers</servlet-name>
-        <url-pattern>/driver/all</url-pattern>
+        <url-pattern>/drivers</url-pattern>
     </servlet-mapping>
     <servlet>
         <servlet-name>deleteDriver</servlet-name>
-        <servlet-class>taxi.controller.driver.DeleteDriver</servlet-class>
+        <servlet-class>taxi.controller.driver.DeleteDriverController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>deleteDriver</servlet-name>
-        <url-pattern>/driver/delete</url-pattern>
+        <url-pattern>/drivers/delete</url-pattern>
     </servlet-mapping>
     <servlet>
         <servlet-name>createManufacturer</servlet-name>
-        <servlet-class>taxi.controller.manufacturer.CreateManufacturer</servlet-class>
+        <servlet-class>taxi.controller.manufacturer.CreateManufacturerController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>createManufacturer</servlet-name>
-        <url-pattern>/manufacturer/create</url-pattern>
+        <url-pattern>/manufacturers/add</url-pattern>
     </servlet-mapping>
     <servlet>
         <servlet-name>createCar</servlet-name>
-        <servlet-class>taxi.controller.car.CreateCar</servlet-class>
+        <servlet-class>taxi.controller.car.CreateCarController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>createCar</servlet-name>
-        <url-pattern>/car/create</url-pattern>
+        <url-pattern>/cars/add</url-pattern>
     </servlet-mapping>
     <servlet>
         <servlet-name>addDriverToCar</servlet-name>
-        <servlet-class>taxi.controller.car.AddDriverToCar</servlet-class>
+        <servlet-class>taxi.controller.car.AddDriverToCarController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>addDriverToCar</servlet-name>
-        <url-pattern>/car/drivers/add</url-pattern>
+        <url-pattern>/cars/drivers/add</url-pattern>
     </servlet-mapping>
     <servlet>
         <servlet-name>deleteCar</servlet-name>
-        <servlet-class>taxi.controller.car.DeleteCar</servlet-class>
+        <servlet-class>taxi.controller.car.DeleteCarController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>deleteCar</servlet-name>
-        <url-pattern>/car/delete</url-pattern>
+        <url-pattern>/cars/delete</url-pattern>
     </servlet-mapping>
     <servlet>
         <servlet-name>getAllCars</servlet-name>
-        <servlet-class>taxi.controller.car.GetAllCars</servlet-class>
+        <servlet-class>taxi.controller.car.GetAllCarsController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>getAllCars</servlet-name>
-        <url-pattern>/car/all</url-pattern>
+        <url-pattern>/cars</url-pattern>
     </servlet-mapping>
     <servlet>
         <servlet-name>getAllManufacturers</servlet-name>
-        <servlet-class>taxi.controller.manufacturer.GetAllManufacturers</servlet-class>
+        <servlet-class>taxi.controller.manufacturer.GetAllManufacturersController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>getAllManufacturers</servlet-name>
-        <url-pattern>/manufacturer/all</url-pattern>
+        <url-pattern>/manufacturers</url-pattern>
     </servlet-mapping>
     <servlet>
         <servlet-name>deleteManufacturer</servlet-name>
-        <servlet-class>taxi.controller.manufacturer.DeleteManufacturer</servlet-class>
+        <servlet-class>taxi.controller.manufacturer.DeleteManufacturerController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>deleteManufacturer</servlet-name>
-        <url-pattern>/manufacturer/delete</url-pattern>
+        <url-pattern>/manufacturers/delete</url-pattern>
     </servlet-mapping>
 </web-app>

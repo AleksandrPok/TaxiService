@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import taxi.lib.Injector;
 import taxi.service.DriverService;
 
-public class DeleteDriver extends HttpServlet {
+public class DeleteDriverController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("taxi");
     private final DriverService driverService = (DriverService)
             injector.getInstance(DriverService.class);

@@ -7,29 +7,29 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import taxi.lib.Injector;
 import taxi.model.Car;
+import taxi.model.Driver;
 import taxi.service.CarService;
-import taxi.service.ManufacturerService;
+import taxi.service.DriverService;
 
-public class CreateCar extends HttpServlet {
+public class AddDriverToCarController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("taxi");
     private final CarService carService = (CarService)
             injector.getInstance(CarService.class);
-    private final ManufacturerService manufacturerService = (ManufacturerService)
-            injector.getInstance(ManufacturerService.class);
+    private final DriverService driverService = (DriverService)
+            injector.getInstance(DriverService.class);
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        req.getRequestDispatcher("/WEB-INF/views/car/create.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/car/drivers/add.jsp").forward(req, resp);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws IOException {
-        String model = req.getParameter("car_model");
-        Long manufacturerId = Long.parseLong(req.getParameter("manufacturerID"));
-        Car car = new Car(model, manufacturerService.get(manufacturerId));
-        carService.create(car);
+        Car car = carService.get(Long.valueOf(req.getParameter("carId")));
+        Driver driver = driverService.get(Long.valueOf(req.getParameter("driverId")));
+        carService.addDriverToCar(driver, car);
         resp.sendRedirect(req.getContextPath() + "/");
     }
 }

@@ -1,11 +1,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Create manufacturer</title>
+    <title>Add manufacturer</title>
 </head>
 <body>
 <h1>Enter data about manufacturer</h1>
-<form method="post" action="${pageContext.request.contextPath}/manufacturer/create">
+<form method="post" action="${pageContext.request.contextPath}/manufacturers/add">
     Please provide manufacturer name<input type="text" name="manufacturer_name" required>
     Please provide manufacturer country<input type="text" name="manufacturer_country" required>
     <button type="submit">Add</button>

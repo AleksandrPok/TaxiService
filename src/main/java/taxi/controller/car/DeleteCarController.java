@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 import taxi.lib.Injector;
 import taxi.service.CarService;
 
-public class DeleteCar extends HttpServlet {
+public class DeleteCarController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("taxi");
     private final CarService carService = (CarService)
             injector.getInstance(CarService.class);
