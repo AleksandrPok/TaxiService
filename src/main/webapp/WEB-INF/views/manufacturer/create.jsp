@@ -4,11 +4,11 @@
     <title>Create manufacturer</title>
 </head>
 <body>
-<h1>Please enter data about manufacturer</h1>
+<h1>Enter data about manufacturer</h1>
 <form method="post" action="${pageContext.request.contextPath}/manufacturer/create">
-    Please provide manufacturer name<input type="text" name="name">
-    Please provide manufacturer country<input type="text" name="country">
-    <button type="submit">Create</button>
+    Please provide manufacturer name<input type="text" name="manufacturer_name" required>
+    Please provide manufacturer country<input type="text" name="manufacturer_country" required>
+    <button type="submit">Add</button>
 </form>
 </body>
 <footer>
