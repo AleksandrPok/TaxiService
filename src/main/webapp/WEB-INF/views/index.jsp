@@ -13,6 +13,7 @@
 <h1>Car</h1>
 <h4><a href="${pageContext.request.contextPath}/cars/add">Add car</a></h4>
 <h4><a href="${pageContext.request.contextPath}/cars">Get all cars</a></h4>
+<h4><a href="${pageContext.request.contextPath}/cars/my">Get my cars</a></h4>
 <h4><a href="${pageContext.request.contextPath}/cars/drivers/add">Add driver to car</a></h4>
 </body>
 </html>

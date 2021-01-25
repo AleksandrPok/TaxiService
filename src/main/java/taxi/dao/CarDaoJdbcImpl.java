@@ -156,7 +156,7 @@ public class CarDaoJdbcImpl implements CarDao {
     }
 
     private List<Driver> getDrivers(Connection connection, Long carId) {
-        String select = "SELECT cd.driver_id, name AS driver_name, license_number "
+        String select = "SELECT cd.driver_id, name AS driver_name, license_number, login "
                 + "FROM cars_drivers cd INNER JOIN drivers d ON d.id = cd.driver_id "
                 + "WHERE cd.car_id = ? AND d.deleted = FALSE";
         try (PreparedStatement statement = connection.prepareStatement(select)) {
@@ -176,7 +176,9 @@ public class CarDaoJdbcImpl implements CarDao {
         Long id = resultSet.getObject("driver_id", Long.class);
         String name = resultSet.getString("driver_name");
         String licenseNumber = resultSet.getString("license_number");
+        String login = resultSet.getString("login");
         Driver driver = new Driver(name, licenseNumber);
+        driver.setLogin(login);
         driver.setId(id);
         return driver;
     }
