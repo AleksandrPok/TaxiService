@@ -9,11 +9,14 @@ CREATE TABLE `taxi`.`manufacturer` (
 );
 
 CREATE TABLE `taxi`.`drivers` (
-    `id` BIGINT(11) NOT NULL AUTO_INCREMENT,
+    `id` BIGINT(11) NOT NULL,
     `name` VARCHAR(45) NOT NULL,
     `license_number` VARCHAR(45) NOT NULL,
-    `deleted` TINYINT NOT NULL DEFAULT 0,
-     PRIMARY KEY (`id`)
+    `login` VARCHAR(45) NOT NULL,
+     `password` VARCHAR(45) NOT NULL,
+     `deleted` TINYINT NOT NULL DEFAULT 0,
+     PRIMARY KEY (`id`),
+     UNIQUE INDEX `login_UNIQUE` (`login` ASC) VISIBLE
 );
 
 CREATE TABLE `taxi`.`cars` (
