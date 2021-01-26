@@ -1,6 +1,8 @@
 package taxi.filter;
 
 import java.io.IOException;
+import java.util.HashSet;
+import java.util.Set;
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
@@ -9,17 +11,14 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import taxi.lib.Injector;
-import taxi.service.DriverService;
 
 public class AuthenticationFilter implements Filter {
-    private static final Injector injector = Injector.getInstance("taxi");
-    private final DriverService driverService = (DriverService)
-            injector.getInstance(DriverService.class);
+    private final Set<String> allowedUrls = new HashSet<>();
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
-
+        allowedUrls.add("/login");
+        allowedUrls.add("/drivers/add");
     }
 
     @Override
@@ -28,7 +27,7 @@ public class AuthenticationFilter implements Filter {
         HttpServletRequest req = (HttpServletRequest) request;
         HttpServletResponse resp = (HttpServletResponse) response;
         String path = req.getServletPath();
-        if (path.equals("/login") || path.equals("/drivers/add")) {
+        if (allowedUrls.contains(path)) {
             chain.doFilter(req, resp);
             return;
         }
